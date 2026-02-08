@@ -1,5 +1,5 @@
 # Filename: 03_if_elif_else.py
-# Python101 - Lesson 2: if / elif / else (More than two choices)
+# Python101 - Week 2: if / elif / else (More than two choices)
 
 print("=== if / elif / else ===")
 
