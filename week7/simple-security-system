@@ -1,0 +1,44 @@
+import random
+
+# Ask for the user's name
+name = input("Enter your name: ").strip().lower()
+
+# Check authorization
+if name != "admin":
+    print("Access Unauthorized")
+
+else:
+    print("Welcome Admin")
+    print("Security verification required")
+
+    # Generate a random 2-digit code
+    code = random.randint(10, 20)
+
+    attempts = 3
+    system_unlocked = False
+
+    # Allow up to 3 attempts
+    while attempts > 0 and system_unlocked == False:
+
+        guess = int(input("Enter the 4-digit code: "))
+
+        if guess == code:
+            system_unlocked = True
+            print("Access Granted")
+            print("System Unlocked")
+
+        else:
+            attempts -= 1
+
+            if guess > code:
+                print("Too high")
+            else:
+                print("Too low")
+
+            if attempts > 0:
+                print("Attempts remaining:", attempts)
+
+    # If all attempts are used
+    if system_unlocked == False:
+        print("Security Locked")
+        print("The correct code was:", code)
